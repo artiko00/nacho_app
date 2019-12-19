@@ -1,0 +1,29 @@
+{%extends 'shared/bootstrap.html'%}
+{%block body%}
+<h1 class="m-5">Hello from PROTOTIPO</h1>
+
+<form action="" method="post">
+    <label for="">Titulo</label>
+    <input type="text" name="titulo" id="">
+    <label for="">Subtitulo</label>
+    <input type="text" name="subtitulo" id="">
+    <input type="submit" value="Agregar Columna" name="add_column">
+</form>
+
+{%if tabla%}
+<table class="m-5">
+    <thead>
+        {%for titulo in tabla['titulo']%}
+        <th>{{titulo}}</th>
+        {%endfor%}
+    </thead>
+    <tbody>
+        {%for subtitulo in tabla['subtitulo']%}
+        <td>{{subtitulo}}</td>
+        {%endfor%}
+    </tbody>
+</table>
+{%else%}
+
+{%endif%}
+{%endblock%}
